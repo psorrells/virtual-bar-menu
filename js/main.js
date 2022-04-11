@@ -13,10 +13,9 @@ function getCocktail() {
     let cocktailIngredient = document.querySelector('input').value
     console.log(cocktailIngredient)
     console.log(cocktailIngredient.trim().replaceAll(' ','-'))
-    fetch("www.thecocktaildb.com/api/json/v1/1/search.php?i=" + cocktailIngredient.trim())
+    fetch("https://www.thecocktaildb.com/api/json/v1/1/search.php?i=" + cocktailIngredient.trim())
     .then(res => res.json()) // parse response as JSON
     .then(data => {
-      console.log(data)
       let drink = data.drinks[Math.floor(Math.random()*data.drinks.length)]
       document.querySelector('h2').innerText = drink.strDrink
       document.querySelector('img').src = drink.strDrinkThumb
