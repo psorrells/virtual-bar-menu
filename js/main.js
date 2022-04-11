@@ -5,8 +5,8 @@
 //nasa has many apis, use the picture of the day, get that picture of the day working.
 
 document.querySelector('button').addEventListener('click',getCocktail)
-document.querySelector('.slider').addEventListener('mouseEnter', toggleSlider)
-document.querySelector('.slider').addEventListener('mouseLeave', toggleSlider)
+document.querySelector('.slider').addEventListener('mouseover', toggleSlider)
+document.querySelector('.slider').addEventListener('mouseout', toggleSlider)
 
 
 function getCocktail() {
