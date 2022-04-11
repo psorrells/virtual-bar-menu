@@ -42,9 +42,13 @@ img{
   height: 500px;
   display: flex;
   align-items: center;
-  animation: slideshow 8s linear infinite;
+  animation: slideshow 15s linear infinite;
 }
-.slide img {
+
+.slide-group:hover {
+  animation-play-state: paused;
+}
+.slide {
   height: 450px;
   width: 200px;
   padding: 20px 30px 20px 30px;
