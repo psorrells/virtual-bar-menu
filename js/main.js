@@ -28,7 +28,10 @@ function getCocktail() {
 }
 
 function addCocktailSlide(name,image,ingredients) {
-  document.querySelectorAll('.slide-group').forEach(group => group.appendChild(makeCocktailSlide(name, image, ingredients)))
+  document.querySelectorAll('.slide-group').forEach(group => {
+    let x = makeCocktailSlide(name, image, ingredients)
+    group.appendChild(x)
+  })
 }
 
 function makeCocktailSlide(name, image, ingredients) {
@@ -43,7 +46,9 @@ function makeCocktailSlide(name, image, ingredients) {
   elImage.src = image
   elIngredients.innerText = ingredients
 
-  return cocktail.append(elName,elImage,elIngredients)
+  cocktail.append(elName,elImage,elIngredients)
+
+  return cocktail
 }
 
 function toggleSlider() {

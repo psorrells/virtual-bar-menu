@@ -50,12 +50,16 @@ img{
   width: 200px;
   padding: 20px 30px 20px 30px;
 }
+
+img {
+  width: 100%;
+}
 @keyframes slideshow {
   0% {transform: translateX(0);}
   100% {transform: translateX(-100%);}
 }
 .slider::before, .slider::after {
-  height: 100px;
+  height: 500px;
   width: 200px;
   position: absolute;
   content: "";
