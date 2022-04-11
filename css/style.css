@@ -45,9 +45,6 @@ img{
   animation: slideshow 15s linear infinite;
 }
 
-.slide-group:hover {
-  animation-play-state: paused;
-}
 .slide {
   height: 450px;
   width: 200px;

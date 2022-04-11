@@ -5,6 +5,8 @@
 //nasa has many apis, use the picture of the day, get that picture of the day working.
 
 document.querySelector('button').addEventListener('click',getCocktail)
+document.querySelector('.slider').addEventListener('mouseEnter', toggleSlider)
+document.querySelector('.slider').addEventListener('mouseLeave', toggleSlider)
 
 
 function getCocktail() {
@@ -27,5 +29,16 @@ function getCocktail() {
 
 
 function makeCocktailSlide() {
-  
+
+}
+
+function toggleSlider() {
+  let slides = document.querySelectorAll('.slide-group')
+  slides.forEach(s => {
+    if (s.style.animationPlayState != 'paused') {
+      s.style.animationPlayState = 'paused'
+    } else {
+      s.style.animationPlayState = 'running'
+    }
+    })
 }
