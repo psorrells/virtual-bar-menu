@@ -11,9 +11,7 @@ document.querySelector('.slider').addEventListener('mouseout', toggleSlider)
 
 function getCocktail() {
     let cocktailIngredient = document.querySelector('input').value
-    console.log(cocktailIngredient)
-    console.log(cocktailIngredient.trim().replaceAll(' ','-'))
-    fetch("https://www.thecocktaildb.com/api/json/v1/1/search.php?i=" + cocktailIngredient.trim())
+    fetch("https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + cocktailIngredient.trim())
     .then(res => res.json()) // parse response as JSON
     .then(data => {
       let drink = data.drinks[Math.floor(Math.random()*data.drinks.length)]
