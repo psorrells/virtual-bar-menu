@@ -27,9 +27,23 @@ function getCocktail() {
     });
 }
 
+function addCocktailSlide(name,image,ingredients) {
+  document.querySelectorAll('.slide-group').forEach(group => group.appendChild(makeCocktailSlide(name, image, ingredients)))
+}
 
-function makeCocktailSlide() {
+function makeCocktailSlide(name, image, ingredients) {
+  let cocktail = document.createElement('div')
+  cocktail.classList.add('slide')
 
+  let elName = document.createElement('h2')
+  let elImage = document.createElement('img')
+  let elIngredients = document.createElement('p')
+
+  elName.innerText = name
+  elImage.src = image
+  elIngredients.innerText = ingredients
+
+  return cocktail.append(elName,elImage,elIngredients)
 }
 
 function toggleSlider() {
