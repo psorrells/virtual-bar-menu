@@ -4,12 +4,12 @@
 
 //nasa has many apis, use the picture of the day, get that picture of the day working.
 
-document.querySelector('button').addEventListener('click',getCocktail)
+document.querySelector('button').addEventListener('click',getCocktails)
 document.querySelector('.slider').addEventListener('mouseover', toggleSlider)
 document.querySelector('.slider').addEventListener('mouseout', toggleSlider)
 
 
-function getCocktail() {
+function getCocktails() {
     clearCocktails()
     let cocktailIngredient = document.querySelector('input').value
     fetch("https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + cocktailIngredient.trim())
