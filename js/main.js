@@ -18,14 +18,15 @@ function getCocktail() {
       data.drinks.forEach(drink => {
         fetch("https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + drink.idDrink)
         .then(res => res.json())
-        .then(data => {
-          console.log(data)
+        .then(data2 => {
+          console.log(data2)
           iList = []
           for(i=1;i<=15;i++) {
-            if (data.drinks[0][`strIngredient${i}`] != null && data.drinks[0][`strIngredient${i}`] != "") {
-              iList.push(data.drinks[0][`strIngredient${i}`])
+            if (data2.drinks[0][`strIngredient${i}`] != null && data2.drinks[0][`strIngredient${i}`] != "") {
+              iList.push(data2.drinks[0][`strIngredient${i}`])
             }
           }
+          document.querySelectorAll('.slide-group').forEach(slideGroup => slideGroup.style.animation = `slideshow ${data.drinks.length * 2}s linear infinite`)
           addCocktailSlide(drink.strDrink,drink.strDrinkThumb,iList.join(', '))
         })
       })
