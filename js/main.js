@@ -14,11 +14,20 @@ function getCocktail() {
     fetch("https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + cocktailIngredient.trim())
     .then(res => res.json()) // parse response as JSON
     .then(data => {
-      let drink = data.drinks[Math.floor(Math.random()*data.drinks.length)]
-      document.querySelector('h2').innerText = drink.strDrink
-      document.querySelector('img').src = drink.strDrinkThumb
-      document.querySelector('p').innerText = drink.strInstructions
-
+      data.drinks.forEach(drink => {
+        fetch("https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + drink.idDrink)
+        .then(res => res.json())
+        .then(data => {
+          console.log(data)
+          iList = []
+          for(i=1;i<=15;i++) {
+            if (data.drinks[0][`strIngredient${i}`] != null && data.drinks[0][`strIngredient${i}`] != "") {
+              iList.push(data.drinks[0][`strIngredient${i}`])
+            }
+          }
+          addCocktailSlide(drink.strDrink,drink.strDrinkThumb,iList.join(', '))
+        })
+      })
     })
     .catch(err => {
         console.log(`error ${err}`)
