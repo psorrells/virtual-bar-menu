@@ -24,3 +24,8 @@ function getCocktail() {
         console.log(`error ${err}`)
     });
 }
+
+
+function makeCocktailSlide() {
+  
+}
