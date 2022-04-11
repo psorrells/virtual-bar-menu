@@ -10,6 +10,7 @@ document.querySelector('.slider').addEventListener('mouseout', toggleSlider)
 
 
 function getCocktail() {
+    clearCocktails()
     let cocktailIngredient = document.querySelector('input').value
     fetch("https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + cocktailIngredient.trim())
     .then(res => res.json()) // parse response as JSON
@@ -67,4 +68,8 @@ function toggleSlider() {
       s.style.animationPlayState = 'running'
     }
     })
+}
+
+function clearCocktails() {
+  document.querySelectorAll('.slide').forEach(slide => slide.remove())
 }
