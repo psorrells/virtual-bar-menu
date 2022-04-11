@@ -31,7 +31,7 @@ img{
 }
 .slider {
   width: 1000px;
-  height: 100px;
+  height: 500px;
   position: relative;
   background: white;
   box-shadow: 0 10px 20px -10px rgba(0,0,0,0.2);
@@ -46,6 +46,7 @@ img{
 }
 .slide img {
   height: 450px;
+  width: 200px;
   padding: 20px 30px 20px 30px;
 }
 @keyframes slideshow {
